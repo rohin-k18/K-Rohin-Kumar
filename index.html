@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Me</title>
+  <title>Khatravath Rohin Kumar - Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
-<body>
+<body ng-controller="myCtrl">
+  <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Your Name</a>
+      <a class="navbar-brand" href="index.html">Khatravath Rohin Kumar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -25,26 +27,55 @@
     </div>
   </nav>
 
+  <!-- Main Content -->
   <main class="container my-5">
-    <h1>Contact Me</h1>
-    <p>Feel free to reach out for collaborations or opportunities!</p>
-    <div class="d-flex justify-content-between flex-wrap">
-      <p>📧 Email: <a href="mailto:rohinkhatravath@gmail.com">rohinkhatravath@gmail.com</a></p>
-      <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/k-rohinkumar/">k-rohinkumar</a></p>
-      <p>💻 GitHub: <a href="https://github.com/rohin-k18">rohin-k18</a></p>
-    </div>
+    <header class="text-center">
+      <h1>Khatravath Rohin Kumar</h1>
+      <p class="lead">AI & Hardware Engineer | Student</p>
+    </header>
+
+    <section class="my-5">
+      <h2>About Me</h2>
+      <p>A passionate student specializing in AI and hardware systems. Experienced in FPGA design, edge AI deployment, and robotics.</p>
+    </section>
+
+    <section class="my-5">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <span class="badge bg-primary">FPGA Design</span>
+        <span class="badge bg-secondary">Python/C++</span>
+        <span class="badge bg-success">TensorFlow/PyTorch</span>
+        <span class="badge bg-danger">ROS (Robot OS)</span>
+        <span class="badge bg-warning">Verilog/VHDL</span>
+      </div>
+    </section>
+
+    <!-- AngularJS Button Example -->
+    <button class="btn btn-primary" ng-click="showAlert()">Click Me</button>
   </main>
 
+  <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3">
     <div class="container">
       <h3>Get in Touch</h3>
       <p>📧 Email: <a href="mailto:rohinkhatravath@gmail.com" class="text-white">rohinkhatravath@gmail.com</a></p>
       <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/k-rohinkumar/" class="text-white">k-rohinkumar</a></p>
       <p>💻 GitHub: <a href="https://github.com/rohin-k18" class="text-white">rohin-k18</a></p>
-      <p class="mt-3">&copy; 2024 Your Name. All rights reserved.</p>
+      <p class="mt-3">&copy; 2024 Khatravath Rohin Kumar. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- AngularJS Script -->
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+      $scope.showAlert = function() {
+        alert('Hello! Button clicked.');
+      };
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
