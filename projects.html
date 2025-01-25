@@ -1,40 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Projects</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Your Projects</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Your Name</h1>
-    <p>Projects</p>
-  </header>
+    <nav>...</nav> <!-- Reuse navigation bar -->
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    <section class="projects">
+        <h2>Projects</h2>
 
-  <section>
-    <h2>Project 1</h2>
-    <p>Description of Project 1.</p>
-    <a href="#">View Project</a>
-  </section>
+        <!-- Project 1: Hardware + AI -->
+        <div class="project-card">
+            <h3>FPGA-Based CNN Accelerator</h3>
+            <img src="assets/project-demo.gif" alt="FPGA Project Demo">
+            <p>Implemented a convolutional neural network on Xilinx FPGA for real-time image classification.</p>
+            <a href="https://github.com/yourusername/fpga-cnn" class="button">View on GitHub</a>
+        </div>
 
-  <section>
-    <h2>Project 2</h2>
-    <p>Description of Project 2.</p>
-    <a href="#">View Project</a>
-  </section>
-
-  <footer>
-    <p>&copy; 2023 Your Name. All rights reserved.</p>
-  </footer>
+        <!-- Project 2: Robotics -->
+        <div class="project-card">
+            <h3>Autonomous Drone Navigation</h3>
+            <p>Used ROS and OpenCV to build a drone that avoids obstacles using reinforcement learning.</p>
+            <a href="https://github.com/yourusername/drone-ai" class="button">View Code</a>
+        </div>
+    </section>
 </body>
 </html>
