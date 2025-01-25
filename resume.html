@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khatravath Rohin Kumar - Resume</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,34 +29,41 @@
   <main class="container my-5">
     <!-- Your Image at the Top -->
     <div class="text-center mb-4">
-      <img src="your-image.jpg" alt="Khatravath Rohin Kumar" class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
+      <img src="https://drive.google.com/uc?export=view&id=1Dug6hAsietnigER_lstIJPDHsHI1CCcR" alt="Khatravath Rohin Kumar" class="img-fluid rounded-circle" style="width: 150px; height: 150px;">
     </div>
 
-    <h1>Resume</h1>
-    <a href="https://drive.google.com/file/d/15yo3L6hD8f3_UpSV5pISWSSIC_a7EovA/view?usp=sharing" class="btn btn-primary" download>Download Resume</a>
+    <h1 class="text-center mb-4">Resume</h1>
 
-    <!-- Embedded PDF Viewer -->
-    <section class="my-5">
-      <h2>View Resume</h2>
-      <iframe src="https://drive.google.com/file/d/15yo3L6hD8f3_UpSV5pISWSSIC_a7EovA/preview" width="100%" height="600px" style="border: none;"></iframe>
-    </section>
-
-    <section class="my-5">
-      <h2>Education</h2>
-      <p><strong>Your University</strong> | B.Tech in Computer Engineering</p>
-    </section>
+    <div class="d-flex justify-content-center gap-2 mb-4">
+      <button id="zoomIn" class="btn btn-secondary"><i class="fas fa-search-plus"></i> Zoom In</button>
+      <button id="zoomOut" class="btn btn-secondary"><i class="fas fa-search-minus"></i> Zoom Out</button>
+      <a href="https://drive.google.com/file/d/15yo3L6hD8f3_UpSV5pISWSSIC_a7EovA/view?usp=sharing" class="btn btn-primary" download>
+        <i class="fas fa-download"></i> Download Resume
+      </a>
+      <button id="printPdf" class="btn btn-primary"><i class="fas fa-print"></i> Print Resume</button>
+    </div>
 
     <section class="my-5">
-      <h2>Experience</h2>
-      <p><strong>AI Intern</strong> | XYZ Robotics (2023)</p>
-      <ul>
-        <li>Optimized neural networks for FPGA-based edge devices.</li>
-        <li>Designed a ROS-based autonomous navigation system.</li>
-      </ul>
+      <div class="position-relative">
+        <iframe id="resumePdf" src="https://drive.google.com/file/d/15yo3L6hD8f3_UpSV5pISWSSIC_a7EovA/preview" width="100%" height="600px" style="border: none;"></iframe>
+        
+        <!-- Symbols/Icons next to the PDF -->
+        <div class="position-absolute top-0 end-0 mt-2 me-2 d-flex gap-2">
+          <a href="https://drive.google.com/file/d/15yo3L6hD8f3_UpSV5pISWSSIC_a7EovA/view?usp=sharing" target="_blank" class="text-dark">
+            <i class="fas fa-external-link-alt fa-lg" title="Open in New Tab"></i>
+          </a>
+          <a href="https://drive.google.com/file/d/15yo3L6hD8f3_UpSV5pISWSSIC_a7EovA/view?usp=sharing" download class="text-dark">
+            <i class="fas fa-download fa-lg" title="Download"></i>
+          </a>
+          <button onclick="window.print()" class="btn btn-link text-dark p-0">
+            <i class="fas fa-print fa-lg" title="Print"></i>
+          </button>
+        </div>
+      </div>
     </section>
   </main>
 
-  <!-- <footer class="bg-dark text-white text-center py-3">
+  <footer class="bg-dark text-white text-center py-3">
     <div class="container">
       <h3>Get in Touch</h3>
       <p>📧 Email: <a href="mailto:rohinkhatravath@gmail.com" class="text-white">rohinkhatravath@gmail.com</a></p>
@@ -64,8 +72,31 @@
       <p>💻 GitHub: <a href="https://github.com/rohin-k18" class="text-white">rohin-k18</a></p>
       <p class="mt-3">&copy; 2024 Khatravath Rohin Kumar. All rights reserved.</p>
     </div>
-  </footer> -->
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Zoom In and Zoom Out functionality
+    const zoomInButton = document.getElementById('zoomIn');
+    const zoomOutButton = document.getElementById('zoomOut');
+    const resumePdf = document.getElementById('resumePdf');
+    let scale = 1;
+
+    zoomInButton.addEventListener('click', () => {
+      scale += 0.1;
+      resumePdf.style.transform = `scale(${scale})`;
+    });
+
+    zoomOutButton.addEventListener('click', () => {
+      scale -= 0.1;
+      resumePdf.style.transform = `scale(${scale})`;
+    });
+
+    // Print functionality
+    const printPdfButton = document.getElementById('printPdf');
+    printPdfButton.addEventListener('click', () => {
+      window.print();
+    });
+  </script>
 </body>
 </html>
